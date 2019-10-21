@@ -1,17 +1,19 @@
 import React from 'react';
-import { Switch, Route, useRouteMatch, Link } from 'react-router-dom';
+import { Switch, Route, useRouteMatch, NavLink } from 'react-router-dom';
 
 import Simple from './Simple';
 import UseFetcher from './UseFetcher';
+
+import style from './style.module.less';
 
 export default function Fetcher() {
   const match = useRouteMatch();
 
   return (
     <div>
-      <ol>
+      <ol className={style.subnav}>
         <li>
-          <Link to={`${match.url}/simple`}>简单用法</Link>
+          <NavLink to={`${match.url}/simple`}>简单用法</NavLink>
         </li>
       </ol>
 
